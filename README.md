@@ -4,7 +4,7 @@
 [Описание проекта DUMMYAPI.IO](#Описание-проекта-DUMMYAPI.IO)   
 
    - [POST](#POST)
-       - [GET /post (Get List)](#GET/post-Get-List)
+       - [GET /post (Get List)](#GET-post-Get-List)
        - [GET /user/:id/post (Get List By User)](#GET-/-user-/-:id-/-post-(Get-List-By-User))
        - [GET/tag/:id/post (Get List By Tag)](#GET-/-tag-/-:id-/-post- (Get-List-By-Tag))     
 ## Описание проекта DUMMYAPI.IO
