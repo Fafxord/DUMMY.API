@@ -126,8 +126,8 @@ owner: object(User Preview)
 #### Create Post
 #### POST/post/create
 
-Создайте новую запись, верните данные созданной записи.
-Body: Post Create (owner and post fields are required)
+ - Создайте новую запись, верните данные созданной записи.
+ - Body: Post Create (owner and post fields are required)
 
 **Request Body**
 
