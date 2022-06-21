@@ -210,4 +210,4 @@ owner: object(User Preview)
  ### Майнд карта
 ____
 
-![Майнд карта]([https://avatars1.githubusercontent.com/u/5384215?v=3&s=460 "Орк"](https://drive.google.com/file/d/1VXCo287zLdsj8baMWQlkHQdGlq9qlcms/view?usp=sharing))
+![Майнд карта](https://drive.google.com/file/d/1VXCo287zLdsj8baMWQlkHQdGlq9qlcms/view?usp=sharing)
