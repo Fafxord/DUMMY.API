@@ -1,0 +1,1316 @@
+{
+	"info": {
+		"_postman_id": "8f8ab44a-5d26-436a-acf8-a45d26c312f0",
+		"name": "Post",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "20694307"
+	},
+	"item": [
+		{
+			"name": "Get list of posts",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"\r",
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"Status code name is OK\", function () {\r",
+							"    pm.response.to.have.status(\"OK\");\r",
+							"});\r",
+							"pm.test(\"Response time is less than 600ms\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(600);\r",
+							"});\r",
+							"var jsonData = pm.response.json();\r",
+							"pm.test(\"Check body data is array\", function () {\r",
+							"    \r",
+							"    pm.expect(jsonData.data).to.be.an('array');\r",
+							"});\r",
+							"pm.test(\"Check limit is 20\", function () {\r",
+							"    \r",
+							"    pm.expect(jsonData.limit).to.eql(20);\r",
+							"});\r",
+							"pm.test(\"Check page is 0\", function () {\r",
+							"    \r",
+							"    pm.expect(jsonData.page).to.eql(0);\r",
+							"});\r",
+							"pm.test(\"Check body total is number\", function () {\r",
+							"    \r",
+							"    pm.expect(jsonData.total).to.be.an('number');\r",
+							"});\r",
+							"pm.test(\"Check body data[0].id is string\", function () {\r",
+							"    \r",
+							"    pm.expect(jsonData.data[0].id).to.be.an('string');\r",
+							"});\r",
+							"pm.test(\"Check body data[19].id is string\", function () {\r",
+							"    \r",
+							"    pm.expect(jsonData.data[19].id).to.be.an('string');\r",
+							"});\r",
+							"pm.test(\"Check body data[0].owner.firstName is string\", function () {\r",
+							"    \r",
+							"    pm.expect(jsonData.data[0].owner.firstName).to.be.an('string');\r",
+							"});\r",
+							"pm.test(\"Check body data[19].owner.firstName is string\", function () {\r",
+							"    \r",
+							"    pm.expect(jsonData.data[19].owner.firstName).to.be.an('string');\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}post",
+					"host": [
+						"{{host}}post"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get list of posts",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}post",
+							"host": [
+								"{{host}}post"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Content-Length",
+							"value": "8047"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "private"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Etag",
+							"value": "W/\"1f6f-BNhswV+5AUN26aX/vN0XgNzpLp4\""
+						},
+						{
+							"key": "Function-Execution-Id",
+							"value": "1hq4vqcmwv6i"
+						},
+						{
+							"key": "Server",
+							"value": "Google Frontend"
+						},
+						{
+							"key": "Strict-Transport-Security",
+							"value": "max-age=31556926"
+						},
+						{
+							"key": "X-Cloud-Trace-Context",
+							"value": "d0eecbb5b7e4671bbae35e217906cdb4"
+						},
+						{
+							"key": "X-Country-Code",
+							"value": "US"
+						},
+						{
+							"key": "Accept-Ranges",
+							"value": "bytes"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 20 Jun 2022 09:52:54 GMT"
+						},
+						{
+							"key": "X-Served-By",
+							"value": "cache-iad-kcgs7200169-IAD"
+						},
+						{
+							"key": "X-Cache",
+							"value": "MISS"
+						},
+						{
+							"key": "X-Cache-Hits",
+							"value": "0"
+						},
+						{
+							"key": "X-Timer",
+							"value": "S1655718774.352329,VS0,VE126"
+						},
+						{
+							"key": "Vary",
+							"value": "cookie,need-authorization, x-fh-requested-host, accept-encoding"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": [\n        {\n            \"id\": \"62b0342ea667a46f69b3d2e0\",\n            \"image\": \"http://placeimg.com/640/480\",\n            \"likes\": 13,\n            \"tags\": [\n                \"dog\",\n                \"cat\"\n            ],\n            \"text\": \"Twas brillig, and the slithy tovesDid gyre and gim...\",\n            \"publishDate\": \"2022-06-20T08:47:42.079Z\",\n            \"updatedDate\": \"2022-06-20T09:02:07.056Z\",\n            \"owner\": {\n                \"id\": \"60d0fe4f5311236168a109ed\",\n                \"title\": \"miss\",\n                \"firstName\": \"Kayla\",\n                \"lastName\": \"Bredesen\",\n                \"picture\": \"https://randomuser.me/api/portraits/med/women/13.jpg\"\n            }\n        },\n        {\n            \"id\": \"62b02b48e4d94b901576882b\",\n            \"image\": \"http://placeimg.com/640/480\",\n            \"likes\": 13,\n            \"tags\": [\n                \"dog\",\n                \"cat\"\n            ],\n            \"text\": \"Twas brillig, and the slithy tovesDid gyre and gim...\",\n            \"publishDate\": \"2022-06-20T08:09:44.529Z\",\n            \"updatedDate\": \"2022-06-20T08:11:43.454Z\",\n            \"owner\": {\n                \"id\": \"60d0fe4f5311236168a109ed\",\n                \"title\": \"miss\",\n                \"firstName\": \"Kayla\",\n                \"lastName\": \"Bredesen\",\n                \"picture\": \"https://randomuser.me/api/portraits/med/women/13.jpg\"\n            }\n        },\n        {\n            \"id\": \"62ae19edb3742d7909d839cc\",\n            \"image\": \"http://placeimg.com/640/480\",\n            \"likes\": 13,\n            \"tags\": [\n                \"dog\",\n                \"cat\"\n            ],\n            \"text\": \"Twas brillig, and the slithy tovesDid gyre and gim...\",\n            \"publishDate\": \"2022-06-18T18:31:09.069Z\",\n            \"updatedDate\": \"2022-06-18T18:50:26.121Z\",\n            \"owner\": {\n                \"id\": \"60d0fe4f5311236168a109ed\",\n                \"title\": \"miss\",\n                \"firstName\": \"Kayla\",\n                \"lastName\": \"Bredesen\",\n                \"picture\": \"https://randomuser.me/api/portraits/med/women/13.jpg\"\n            }\n        },\n        {\n            \"id\": \"62ae10acb3742d761fd83574\",\n            \"image\": \"http://placeimg.com/640/480\",\n            \"likes\": 987,\n            \"tags\": [\n                \"dog\",\n                \"cat\"\n            ],\n            \"text\": \"Vitae ab quia recusandae ut ipsam. Beatae illum ea...\",\n            \"publishDate\": \"2022-06-18T17:51:40.022Z\",\n            \"updatedDate\": \"2022-06-18T17:51:40.022Z\",\n            \"owner\": {\n                \"id\": \"60d0fe4f5311236168a109ed\",\n                \"title\": \"miss\",\n                \"firstName\": \"Kayla\",\n                \"lastName\": \"Bredesen\",\n                \"picture\": \"https://randomuser.me/api/portraits/med/women/13.jpg\"\n            }\n        },\n        {\n            \"id\": \"62ae0fd4b3742d9cc3d83525\",\n            \"image\": \"http://placeimg.com/640/480\",\n            \"likes\": 546,\n            \"tags\": [\n                \"dog\",\n                \"cat\"\n            ],\n            \"text\": \"rem est soluta\",\n            \"publishDate\": \"2022-06-18T17:48:04.830Z\",\n            \"updatedDate\": \"2022-06-18T17:48:04.830Z\",\n            \"owner\": {\n                \"id\": \"60d0fe4f5311236168a109ed\",\n                \"title\": \"miss\",\n                \"firstName\": \"Kayla\",\n                \"lastName\": \"Bredesen\",\n                \"picture\": \"https://randomuser.me/api/portraits/med/women/13.jpg\"\n            }\n        },\n        {\n            \"id\": \"62ae0fb8b3742ddf51d83518\",\n            \"image\": \"http://placeimg.com/640/480\",\n            \"likes\": 802,\n            \"tags\": [\n                \"dog\",\n                \"cat\"\n            ],\n            \"text\": \"Eligendi delectus sed doloremque dolorem eum velit...\",\n            \"publishDate\": \"2022-06-18T17:47:36.705Z\",\n            \"updatedDate\": \"2022-06-18T17:47:36.705Z\",\n            \"owner\": {\n                \"id\": \"60d0fe4f5311236168a109ed\",\n                \"title\": \"miss\",\n                \"firstName\": \"Kayla\",\n                \"lastName\": \"Bredesen\",\n                \"picture\": \"https://randomuser.me/api/portraits/med/women/13.jpg\"\n            }\n        },\n        {\n            \"id\": \"62ab90e5aac1b019e2b4ae03\",\n            \"image\": \"http://placeimg.com/640/480\",\n            \"likes\": 571,\n            \"tags\": [\n                \"dog\",\n                \"cat\"\n            ],\n            \"text\": \"blanditiis sed libero\",\n            \"publishDate\": \"2022-06-16T20:21:57.918Z\",\n            \"updatedDate\": \"2022-06-16T20:21:57.918Z\",\n            \"owner\": {\n                \"id\": \"60d0fe4f5311236168a109ed\",\n                \"title\": \"miss\",\n                \"firstName\": \"Kayla\",\n                \"lastName\": \"Bredesen\",\n                \"picture\": \"https://randomuser.me/api/portraits/med/women/13.jpg\"\n            }\n        },\n        {\n            \"id\": \"62ab8e8daac1b0027ab4ac85\",\n            \"image\": \"http://placeimg.com/640/480\",\n            \"likes\": 918,\n            \"tags\": [\n                \"dog\",\n                \"cat\"\n            ],\n            \"text\": \"nesciunt quisquam earum\",\n            \"publishDate\": \"2022-06-16T20:11:57.504Z\",\n            \"updatedDate\": \"2022-06-16T20:11:57.504Z\",\n            \"owner\": {\n                \"id\": \"60d0fe4f5311236168a109ed\",\n                \"title\": \"miss\",\n                \"firstName\": \"Kayla\",\n                \"lastName\": \"Bredesen\",\n                \"picture\": \"https://randomuser.me/api/portraits/med/women/13.jpg\"\n            }\n        },\n        {\n            \"id\": \"62ab8df8aac1b06c07b4ac05\",\n            \"image\": \"http://placeimg.com/640/480\",\n            \"likes\": 840,\n            \"tags\": [\n                \"dog\",\n                \"cat\"\n            ],\n            \"text\": \"odit id eveniet\",\n            \"publishDate\": \"2022-06-16T20:09:28.250Z\",\n            \"updatedDate\": \"2022-06-16T20:09:28.250Z\",\n            \"owner\": {\n                \"id\": \"60d0fe4f5311236168a109ed\",\n                \"title\": \"miss\",\n                \"firstName\": \"Kayla\",\n                \"lastName\": \"Bredesen\",\n                \"picture\": \"https://randomuser.me/api/portraits/med/women/13.jpg\"\n            }\n        },\n        {\n            \"id\": \"62ab8deaaac1b0d48fb4abff\",\n            \"image\": \"http://placeimg.com/640/480\",\n            \"likes\": 192,\n            \"tags\": [\n                \"dog\",\n                \"cat\"\n            ],\n            \"text\": \"Maiores earum consectetur ut et eos eos numquam fa...\",\n            \"publishDate\": \"2022-06-16T20:09:14.649Z\",\n            \"updatedDate\": \"2022-06-16T20:09:14.649Z\",\n            \"owner\": {\n                \"id\": \"60d0fe4f5311236168a109ed\",\n                \"title\": \"miss\",\n                \"firstName\": \"Kayla\",\n                \"lastName\": \"Bredesen\",\n                \"picture\": \"https://randomuser.me/api/portraits/med/women/13.jpg\"\n            }\n        },\n        {\n            \"id\": \"62ab8da2aac1b01c15b4abad\",\n            \"image\": \"http://placeimg.com/640/480\",\n            \"likes\": 828,\n            \"tags\": [\n                \"dog\",\n                \"cat\"\n            ],\n            \"text\": \"repellat\",\n            \"publishDate\": \"2022-06-16T20:08:02.295Z\",\n            \"updatedDate\": \"2022-06-16T20:08:02.295Z\",\n            \"owner\": {\n                \"id\": \"60d0fe4f5311236168a109ed\",\n                \"title\": \"miss\",\n                \"firstName\": \"Kayla\",\n                \"lastName\": \"Bredesen\",\n                \"picture\": \"https://randomuser.me/api/portraits/med/women/13.jpg\"\n            }\n        },\n        {\n            \"id\": \"62ab8d8daac1b0c348b4ab9e\",\n            \"image\": \"http://placeimg.com/640/480\",\n            \"likes\": 743,\n            \"tags\": [\n                \"dog\",\n                \"cat\"\n            ],\n            \"text\": \"Aut exercitationem totam aut.\",\n            \"publishDate\": \"2022-06-16T20:07:41.330Z\",\n            \"updatedDate\": \"2022-06-16T20:07:41.330Z\",\n            \"owner\": {\n                \"id\": \"60d0fe4f5311236168a109ed\",\n                \"title\": \"miss\",\n                \"firstName\": \"Kayla\",\n                \"lastName\": \"Bredesen\",\n                \"picture\": \"https://randomuser.me/api/portraits/med/women/13.jpg\"\n            }\n        },\n        {\n            \"id\": \"62ab8d6faac1b0ec5db4ab98\",\n            \"image\": \"http://placeimg.com/640/480\",\n            \"likes\": 184,\n            \"tags\": [\n                \"dog\",\n                \"cat\"\n            ],\n            \"text\": \"Sapiente dolor dolores magnam autem et consequatur...\",\n            \"publishDate\": \"2022-06-16T20:07:11.230Z\",\n            \"updatedDate\": \"2022-06-16T20:07:11.230Z\",\n            \"owner\": {\n                \"id\": \"60d0fe4f5311236168a109ed\",\n                \"title\": \"miss\",\n                \"firstName\": \"Kayla\",\n                \"lastName\": \"Bredesen\",\n                \"picture\": \"https://randomuser.me/api/portraits/med/women/13.jpg\"\n            }\n        },\n        {\n            \"id\": \"62ab8ccbaac1b03a4fb4ab36\",\n            \"image\": \"http://placeimg.com/640/480\",\n            \"likes\": 752,\n            \"tags\": [\n                \"dog\",\n                \"cat\"\n            ],\n            \"text\": \"Commodi omnis repudiandae aliquam voluptates earum...\",\n            \"publishDate\": \"2022-06-16T20:04:27.355Z\",\n            \"updatedDate\": \"2022-06-16T20:04:27.355Z\",\n            \"owner\": {\n                \"id\": \"60d0fe4f5311236168a109ed\",\n                \"title\": \"miss\",\n                \"firstName\": \"Kayla\",\n                \"lastName\": \"Bredesen\",\n                \"picture\": \"https://randomuser.me/api/portraits/med/women/13.jpg\"\n            }\n        },\n        {\n            \"id\": \"62ab8b72aac1b04832b4a96c\",\n            \"image\": \"http://placeimg.com/640/480\",\n            \"likes\": 939,\n            \"tags\": [\n                \"dog\",\n                \"cat\"\n            ],\n            \"text\": \"animi\",\n            \"publishDate\": \"2022-06-16T19:58:42.557Z\",\n            \"updatedDate\": \"2022-06-16T19:58:42.557Z\",\n            \"owner\": {\n                \"id\": \"60d0fe4f5311236168a109ed\",\n                \"title\": \"miss\",\n                \"firstName\": \"Kayla\",\n                \"lastName\": \"Bredesen\",\n                \"picture\": \"https://randomuser.me/api/portraits/med/women/13.jpg\"\n            }\n        },\n        {\n            \"id\": \"62ab8b13aac1b0a569b4a94a\",\n            \"image\": \"http://placeimg.com/640/480\",\n            \"likes\": 148,\n            \"tags\": [\n                \"dog\",\n                \"cat\"\n            ],\n            \"text\": \"Ut minus doloribus magnam consequatur ad nisi. Ips...\",\n            \"publishDate\": \"2022-06-16T19:57:07.213Z\",\n            \"updatedDate\": \"2022-06-16T19:57:07.213Z\",\n            \"owner\": {\n                \"id\": \"60d0fe4f5311236168a109ed\",\n                \"title\": \"miss\",\n                \"firstName\": \"Kayla\",\n                \"lastName\": \"Bredesen\",\n                \"picture\": \"https://randomuser.me/api/portraits/med/women/13.jpg\"\n            }\n        },\n        {\n            \"id\": \"62ab8b0eaac1b046beb4a944\",\n            \"image\": \"http://placeimg.com/640/480\",\n            \"likes\": 63,\n            \"tags\": [\n                \"dog\",\n                \"cat\"\n            ],\n            \"text\": \"Ea est blanditiis. Magnam voluptatem delectus. Quo...\",\n            \"publishDate\": \"2022-06-16T19:57:02.850Z\",\n            \"updatedDate\": \"2022-06-16T19:57:02.850Z\",\n            \"owner\": {\n                \"id\": \"60d0fe4f5311236168a109ed\",\n                \"title\": \"miss\",\n                \"firstName\": \"Kayla\",\n                \"lastName\": \"Bredesen\",\n                \"picture\": \"https://randomuser.me/api/portraits/med/women/13.jpg\"\n            }\n        },\n        {\n            \"id\": \"62ab8af6aac1b02be2b4a92e\",\n            \"image\": \"http://placeimg.com/640/480\",\n            \"likes\": 148,\n            \"tags\": [\n                \"dog\",\n                \"cat\"\n            ],\n            \"text\": \"Minus id qui eos id ut ea est possimus.\",\n            \"publishDate\": \"2022-06-16T19:56:38.710Z\",\n            \"updatedDate\": \"2022-06-16T19:56:38.710Z\",\n            \"owner\": {\n                \"id\": \"60d0fe4f5311236168a109ed\",\n                \"title\": \"miss\",\n                \"firstName\": \"Kayla\",\n                \"lastName\": \"Bredesen\",\n                \"picture\": \"https://randomuser.me/api/portraits/med/women/13.jpg\"\n            }\n        },\n        {\n            \"id\": \"62ab89e2aac1b00bb7b4a8b3\",\n            \"image\": \"http://placeimg.com/640/480\",\n            \"likes\": 111,\n            \"tags\": [\n                \"dog\",\n                \"cat\"\n            ],\n            \"text\": \"Voluptatem beatae maiores nemo accusantium minima....\",\n            \"publishDate\": \"2022-06-16T19:52:02.340Z\",\n            \"updatedDate\": \"2022-06-16T19:52:02.340Z\",\n            \"owner\": {\n                \"id\": \"60d0fe4f5311236168a109ed\",\n                \"title\": \"miss\",\n                \"firstName\": \"Kayla\",\n                \"lastName\": \"Bredesen\",\n                \"picture\": \"https://randomuser.me/api/portraits/med/women/13.jpg\"\n            }\n        },\n        {\n            \"id\": \"62ab87e7aac1b036c3b4a78e\",\n            \"image\": \"http://placeimg.com/640/480\",\n            \"likes\": 60,\n            \"tags\": [\n                \"dog\",\n                \"cat\"\n            ],\n            \"text\": \"Facere aliquam autem ad veritatis. Incidunt maiore...\",\n            \"publishDate\": \"2022-06-16T19:43:35.565Z\",\n            \"updatedDate\": \"2022-06-16T19:43:35.565Z\",\n            \"owner\": {\n                \"id\": \"60d0fe4f5311236168a109ed\",\n                \"title\": \"miss\",\n                \"firstName\": \"Kayla\",\n                \"lastName\": \"Bredesen\",\n                \"picture\": \"https://randomuser.me/api/portraits/med/women/13.jpg\"\n            }\n        }\n    ],\n    \"total\": 946,\n    \"page\": 0,\n    \"limit\": 20\n}"
+				}
+			]
+		},
+		{
+			"name": "Create Post",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"\r",
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"Status code name is OK\", function () {\r",
+							"    pm.response.to.have.status(\"OK\");\r",
+							"});\r",
+							"pm.test(\"Response time is less than 600ms\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(600);\r",
+							"});\r",
+							"var jsonData = pm.response.json();\r",
+							"pm.collectionVariables.set(\"post ID\", jsonData.id);\r",
+							"pm.collectionVariables.set(\"user ID\", jsonData.owner.id);\r",
+							"\r",
+							"pm.test(\"id post to be string\", function () {\r",
+							"   \r",
+							"    pm.expect(jsonData.id).to.be.a('string');\r",
+							"});\r",
+							"pm.test(\"url image to be string\", function () {\r",
+							"   \r",
+							"    pm.expect(jsonData.image).to.be.a('string');\r",
+							"}); \r",
+							"pm.test(\"likes to be number\", function () {\r",
+							"   \r",
+							"    pm.expect(jsonData.likes).to.be.a('number');\r",
+							"});\r",
+							"pm.test(\"tags to be array\", function () {\r",
+							"   \r",
+							"    pm.expect(jsonData.tags).to.be.a('array');\r",
+							"});\r",
+							"pm.test(\"Check body.tags[0] is dog\", function () {\r",
+							"    \r",
+							"    pm.expect(jsonData.tags[0]).to.eql(\"dog\");\r",
+							"});\r",
+							"pm.test(\"Check body.tags[1] is cat\", function () {\r",
+							"    \r",
+							"    pm.expect(jsonData.tags[1]).to.eql(\"cat\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"text to be string\", function () {\r",
+							"   \r",
+							"    pm.expect(jsonData.text).to.be.a('string');\r",
+							"});\r",
+							"pm.test(\"publishDate post to be string\", function () {\r",
+							"   \r",
+							"    pm.expect(jsonData.publishDate).to.be.a('string');\r",
+							"});\r",
+							"pm.test(\"updatedDate post to be string\", function () {\r",
+							"   \r",
+							"    pm.expect(jsonData.updatedDate).to.be.a('string');\r",
+							"});\r",
+							"pm.test(\"User ID-60d0fe4f5311236168a109ed created post\", function () {\r",
+							"   \r",
+							"    pm.expect(jsonData.owner.id).to.eql(pm.collectionVariables.get(\"user ID\"));\r",
+							"});\r",
+							"pm.test(\"User title-miss created post\", function () {\r",
+							"   \r",
+							"    pm.expect(jsonData.owner.title).to.eql(\"miss\");\r",
+							"});   \r",
+							" pm.test(\"User firstName-Kayla created post\", function () {\r",
+							"   \r",
+							"    pm.expect(jsonData.owner.firstName).to.eql(\"Kayla\");\r",
+							"});\r",
+							" pm.test(\"User lastName-Bredesen created post\", function () {\r",
+							"   \r",
+							"    pm.expect(jsonData.owner.lastName).to.eql(\"Bredesen\");\r",
+							"});  \r",
+							"pm.test(\"User picture created post\", function () {\r",
+							"   \r",
+							"    pm.expect(jsonData.owner.picture).to.eql(\"https://randomuser.me/api/portraits/med/women/13.jpg\");\r",
+							"});    "
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"text\": \"{{$randomLoremText}}\",\r\n\"image\": \"{{$randomImageUrl}}\",\r\n\"likes\": {{$randomInt}},\r\n\"tags\": [\"dog\",\"cat\"],\r\n\"owner\": \"60d0fe4f5311236168a109ed\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}post/create",
+					"host": [
+						"{{host}}post"
+					],
+					"path": [
+						"create"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Create Post",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"text\": \"{{$randomLoremText}}\",\r\n\"image\": \"{{$randomImageUrl}}\",\r\n\"likes\": {{$randomInt}},\r\n\"tags\": [\"dog\",\"cat\"],\r\n\"owner\": \"60d0fe4f5311236168a109ed\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}post/create",
+							"host": [
+								"{{host}}post"
+							],
+							"path": [
+								"create"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Content-Length",
+							"value": "416"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "private"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Etag",
+							"value": "W/\"1a0-WapVYTj2hRj7qJRVZW8sWCd7VO8\""
+						},
+						{
+							"key": "Function-Execution-Id",
+							"value": "1hq45pg5eqhu"
+						},
+						{
+							"key": "Server",
+							"value": "Google Frontend"
+						},
+						{
+							"key": "Strict-Transport-Security",
+							"value": "max-age=31556926"
+						},
+						{
+							"key": "X-Cloud-Trace-Context",
+							"value": "21d3e7e8067a0ce6647b5ea917e92072;o=1"
+						},
+						{
+							"key": "X-Country-Code",
+							"value": "US"
+						},
+						{
+							"key": "Accept-Ranges",
+							"value": "bytes"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 20 Jun 2022 09:09:08 GMT"
+						},
+						{
+							"key": "X-Served-By",
+							"value": "cache-iad-kcgs7200159-IAD"
+						},
+						{
+							"key": "X-Cache",
+							"value": "MISS"
+						},
+						{
+							"key": "X-Cache-Hits",
+							"value": "0"
+						},
+						{
+							"key": "X-Timer",
+							"value": "S1655716148.306783,VS0,VE190"
+						},
+						{
+							"key": "Vary",
+							"value": "cookie,need-authorization, x-fh-requested-host, accept-encoding"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": \"62b03934e4d94bc93a76a357\",\n    \"image\": \"http://placeimg.com/640/480\",\n    \"likes\": 876,\n    \"link\": \"\",\n    \"tags\": [\n        \"dog\",\n        \"cat\"\n    ],\n    \"text\": \"Unde sit rerum recusandae sunt fuga qui velit.\",\n    \"publishDate\": \"2022-06-20T09:09:08.461Z\",\n    \"updatedDate\": \"2022-06-20T09:09:08.461Z\",\n    \"owner\": {\n        \"id\": \"60d0fe4f5311236168a109ed\",\n        \"title\": \"miss\",\n        \"firstName\": \"Kayla\",\n        \"lastName\": \"Bredesen\",\n        \"picture\": \"https://randomuser.me/api/portraits/med/women/13.jpg\"\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Get List By User",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"\r",
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"Status code name is OK\", function () {\r",
+							"    pm.response.to.have.status(\"OK\");\r",
+							"});\r",
+							"pm.test(\"Response time is less than 600ms\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(600);\r",
+							"});\r",
+							"var jsonData = pm.response.json();\r",
+							"pm.test(\"Check body data is array\", function () {\r",
+							"    \r",
+							"    pm.expect(jsonData.data).to.be.an('array');\r",
+							"});\r",
+							"pm.test(\"Check body data[0].owner.id is user ID\", function () {\r",
+							"    \r",
+							"    pm.expect(jsonData.data[0].owner.id).to.eql(pm.collectionVariables.get(\"user ID\"));\r",
+							"});\r",
+							"pm.test(\"Check body data[19].owner.id is user ID\", function () {\r",
+							"    \r",
+							"    pm.expect(jsonData.data[19].owner.id).to.eql(pm.collectionVariables.get(\"user ID\"));\r",
+							"});\r",
+							"pm.test(\"Check body data[0].tags[0] is dog\", function () {\r",
+							"    \r",
+							"    pm.expect(jsonData.data[0].tags[0]).to.eql(\"dog\");\r",
+							"});\r",
+							"pm.test(\"Check body data[19].tags[0] is dog\", function () {\r",
+							"    \r",
+							"    pm.expect(jsonData.data[19].tags[0]).to.eql(\"dog\");\r",
+							"});\r",
+							"pm.test(\"Check body data[0].tags[1] is cat\", function () {\r",
+							"    \r",
+							"    pm.expect(jsonData.data[0].tags[1]).to.eql(\"cat\");\r",
+							"});\r",
+							"pm.test(\"Check body data[19].tags[1] is cat\", function () {\r",
+							"    \r",
+							"    pm.expect(jsonData.data[19].tags[1]).to.eql(\"cat\");\r",
+							"});\r",
+							"pm.test(\"Check limit is 20\", function () {\r",
+							"    \r",
+							"    pm.expect(jsonData.limit).to.eql(20);\r",
+							"});\r",
+							"pm.test(\"Check page is 0\", function () {\r",
+							"    \r",
+							"    pm.expect(jsonData.page).to.eql(0);\r",
+							"});\r",
+							"pm.test(\"Check body total is number\", function () {\r",
+							"    \r",
+							"    pm.expect(jsonData.total).to.be.an('number');\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}user/{{user ID}}/post",
+					"host": [
+						"{{host}}user"
+					],
+					"path": [
+						"{{user ID}}",
+						"post"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get List By User",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}user/{{user ID}}/post",
+							"host": [
+								"{{host}}user"
+							],
+							"path": [
+								"{{user ID}}",
+								"post"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Content-Length",
+							"value": "8046"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "private"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Etag",
+							"value": "W/\"1f6e-6PsOGUqY4zqgCMLdMQSCvoGosRw\""
+						},
+						{
+							"key": "Function-Execution-Id",
+							"value": "1hq4k8b1ci4c"
+						},
+						{
+							"key": "Server",
+							"value": "Google Frontend"
+						},
+						{
+							"key": "Strict-Transport-Security",
+							"value": "max-age=31556926"
+						},
+						{
+							"key": "X-Cloud-Trace-Context",
+							"value": "7856345ec726d86c0a4c2d95f19dc247;o=1"
+						},
+						{
+							"key": "X-Country-Code",
+							"value": "US"
+						},
+						{
+							"key": "Accept-Ranges",
+							"value": "bytes"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 20 Jun 2022 09:42:32 GMT"
+						},
+						{
+							"key": "X-Served-By",
+							"value": "cache-iad-kiad7000154-IAD"
+						},
+						{
+							"key": "X-Cache",
+							"value": "MISS"
+						},
+						{
+							"key": "X-Cache-Hits",
+							"value": "0"
+						},
+						{
+							"key": "X-Timer",
+							"value": "S1655718152.480797,VS0,VE421"
+						},
+						{
+							"key": "Vary",
+							"value": "cookie,need-authorization, x-fh-requested-host, accept-encoding"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": [\n        {\n            \"id\": \"62b0342ea667a46f69b3d2e0\",\n            \"image\": \"http://placeimg.com/640/480\",\n            \"likes\": 13,\n            \"tags\": [\n                \"dog\",\n                \"cat\"\n            ],\n            \"text\": \"Twas brillig, and the slithy tovesDid gyre and gim...\",\n            \"publishDate\": \"2022-06-20T08:47:42.079Z\",\n            \"updatedDate\": \"2022-06-20T09:02:07.056Z\",\n            \"owner\": {\n                \"id\": \"60d0fe4f5311236168a109ed\",\n                \"title\": \"miss\",\n                \"firstName\": \"Kayla\",\n                \"lastName\": \"Bredesen\",\n                \"picture\": \"https://randomuser.me/api/portraits/med/women/13.jpg\"\n            }\n        },\n        {\n            \"id\": \"62b02b48e4d94b901576882b\",\n            \"image\": \"http://placeimg.com/640/480\",\n            \"likes\": 13,\n            \"tags\": [\n                \"dog\",\n                \"cat\"\n            ],\n            \"text\": \"Twas brillig, and the slithy tovesDid gyre and gim...\",\n            \"publishDate\": \"2022-06-20T08:09:44.529Z\",\n            \"updatedDate\": \"2022-06-20T08:11:43.454Z\",\n            \"owner\": {\n                \"id\": \"60d0fe4f5311236168a109ed\",\n                \"title\": \"miss\",\n                \"firstName\": \"Kayla\",\n                \"lastName\": \"Bredesen\",\n                \"picture\": \"https://randomuser.me/api/portraits/med/women/13.jpg\"\n            }\n        },\n        {\n            \"id\": \"62ae19edb3742d7909d839cc\",\n            \"image\": \"http://placeimg.com/640/480\",\n            \"likes\": 13,\n            \"tags\": [\n                \"dog\",\n                \"cat\"\n            ],\n            \"text\": \"Twas brillig, and the slithy tovesDid gyre and gim...\",\n            \"publishDate\": \"2022-06-18T18:31:09.069Z\",\n            \"updatedDate\": \"2022-06-18T18:50:26.121Z\",\n            \"owner\": {\n                \"id\": \"60d0fe4f5311236168a109ed\",\n                \"title\": \"miss\",\n                \"firstName\": \"Kayla\",\n                \"lastName\": \"Bredesen\",\n                \"picture\": \"https://randomuser.me/api/portraits/med/women/13.jpg\"\n            }\n        },\n        {\n            \"id\": \"62ae10acb3742d761fd83574\",\n            \"image\": \"http://placeimg.com/640/480\",\n            \"likes\": 987,\n            \"tags\": [\n                \"dog\",\n                \"cat\"\n            ],\n            \"text\": \"Vitae ab quia recusandae ut ipsam. Beatae illum ea...\",\n            \"publishDate\": \"2022-06-18T17:51:40.022Z\",\n            \"updatedDate\": \"2022-06-18T17:51:40.022Z\",\n            \"owner\": {\n                \"id\": \"60d0fe4f5311236168a109ed\",\n                \"title\": \"miss\",\n                \"firstName\": \"Kayla\",\n                \"lastName\": \"Bredesen\",\n                \"picture\": \"https://randomuser.me/api/portraits/med/women/13.jpg\"\n            }\n        },\n        {\n            \"id\": \"62ae0fd4b3742d9cc3d83525\",\n            \"image\": \"http://placeimg.com/640/480\",\n            \"likes\": 546,\n            \"tags\": [\n                \"dog\",\n                \"cat\"\n            ],\n            \"text\": \"rem est soluta\",\n            \"publishDate\": \"2022-06-18T17:48:04.830Z\",\n            \"updatedDate\": \"2022-06-18T17:48:04.830Z\",\n            \"owner\": {\n                \"id\": \"60d0fe4f5311236168a109ed\",\n                \"title\": \"miss\",\n                \"firstName\": \"Kayla\",\n                \"lastName\": \"Bredesen\",\n                \"picture\": \"https://randomuser.me/api/portraits/med/women/13.jpg\"\n            }\n        },\n        {\n            \"id\": \"62ae0fb8b3742ddf51d83518\",\n            \"image\": \"http://placeimg.com/640/480\",\n            \"likes\": 802,\n            \"tags\": [\n                \"dog\",\n                \"cat\"\n            ],\n            \"text\": \"Eligendi delectus sed doloremque dolorem eum velit...\",\n            \"publishDate\": \"2022-06-18T17:47:36.705Z\",\n            \"updatedDate\": \"2022-06-18T17:47:36.705Z\",\n            \"owner\": {\n                \"id\": \"60d0fe4f5311236168a109ed\",\n                \"title\": \"miss\",\n                \"firstName\": \"Kayla\",\n                \"lastName\": \"Bredesen\",\n                \"picture\": \"https://randomuser.me/api/portraits/med/women/13.jpg\"\n            }\n        },\n        {\n            \"id\": \"62ab90e5aac1b019e2b4ae03\",\n            \"image\": \"http://placeimg.com/640/480\",\n            \"likes\": 571,\n            \"tags\": [\n                \"dog\",\n                \"cat\"\n            ],\n            \"text\": \"blanditiis sed libero\",\n            \"publishDate\": \"2022-06-16T20:21:57.918Z\",\n            \"updatedDate\": \"2022-06-16T20:21:57.918Z\",\n            \"owner\": {\n                \"id\": \"60d0fe4f5311236168a109ed\",\n                \"title\": \"miss\",\n                \"firstName\": \"Kayla\",\n                \"lastName\": \"Bredesen\",\n                \"picture\": \"https://randomuser.me/api/portraits/med/women/13.jpg\"\n            }\n        },\n        {\n            \"id\": \"62ab8e8daac1b0027ab4ac85\",\n            \"image\": \"http://placeimg.com/640/480\",\n            \"likes\": 918,\n            \"tags\": [\n                \"dog\",\n                \"cat\"\n            ],\n            \"text\": \"nesciunt quisquam earum\",\n            \"publishDate\": \"2022-06-16T20:11:57.504Z\",\n            \"updatedDate\": \"2022-06-16T20:11:57.504Z\",\n            \"owner\": {\n                \"id\": \"60d0fe4f5311236168a109ed\",\n                \"title\": \"miss\",\n                \"firstName\": \"Kayla\",\n                \"lastName\": \"Bredesen\",\n                \"picture\": \"https://randomuser.me/api/portraits/med/women/13.jpg\"\n            }\n        },\n        {\n            \"id\": \"62ab8df8aac1b06c07b4ac05\",\n            \"image\": \"http://placeimg.com/640/480\",\n            \"likes\": 840,\n            \"tags\": [\n                \"dog\",\n                \"cat\"\n            ],\n            \"text\": \"odit id eveniet\",\n            \"publishDate\": \"2022-06-16T20:09:28.250Z\",\n            \"updatedDate\": \"2022-06-16T20:09:28.250Z\",\n            \"owner\": {\n                \"id\": \"60d0fe4f5311236168a109ed\",\n                \"title\": \"miss\",\n                \"firstName\": \"Kayla\",\n                \"lastName\": \"Bredesen\",\n                \"picture\": \"https://randomuser.me/api/portraits/med/women/13.jpg\"\n            }\n        },\n        {\n            \"id\": \"62ab8deaaac1b0d48fb4abff\",\n            \"image\": \"http://placeimg.com/640/480\",\n            \"likes\": 192,\n            \"tags\": [\n                \"dog\",\n                \"cat\"\n            ],\n            \"text\": \"Maiores earum consectetur ut et eos eos numquam fa...\",\n            \"publishDate\": \"2022-06-16T20:09:14.649Z\",\n            \"updatedDate\": \"2022-06-16T20:09:14.649Z\",\n            \"owner\": {\n                \"id\": \"60d0fe4f5311236168a109ed\",\n                \"title\": \"miss\",\n                \"firstName\": \"Kayla\",\n                \"lastName\": \"Bredesen\",\n                \"picture\": \"https://randomuser.me/api/portraits/med/women/13.jpg\"\n            }\n        },\n        {\n            \"id\": \"62ab8da2aac1b01c15b4abad\",\n            \"image\": \"http://placeimg.com/640/480\",\n            \"likes\": 828,\n            \"tags\": [\n                \"dog\",\n                \"cat\"\n            ],\n            \"text\": \"repellat\",\n            \"publishDate\": \"2022-06-16T20:08:02.295Z\",\n            \"updatedDate\": \"2022-06-16T20:08:02.295Z\",\n            \"owner\": {\n                \"id\": \"60d0fe4f5311236168a109ed\",\n                \"title\": \"miss\",\n                \"firstName\": \"Kayla\",\n                \"lastName\": \"Bredesen\",\n                \"picture\": \"https://randomuser.me/api/portraits/med/women/13.jpg\"\n            }\n        },\n        {\n            \"id\": \"62ab8d8daac1b0c348b4ab9e\",\n            \"image\": \"http://placeimg.com/640/480\",\n            \"likes\": 743,\n            \"tags\": [\n                \"dog\",\n                \"cat\"\n            ],\n            \"text\": \"Aut exercitationem totam aut.\",\n            \"publishDate\": \"2022-06-16T20:07:41.330Z\",\n            \"updatedDate\": \"2022-06-16T20:07:41.330Z\",\n            \"owner\": {\n                \"id\": \"60d0fe4f5311236168a109ed\",\n                \"title\": \"miss\",\n                \"firstName\": \"Kayla\",\n                \"lastName\": \"Bredesen\",\n                \"picture\": \"https://randomuser.me/api/portraits/med/women/13.jpg\"\n            }\n        },\n        {\n            \"id\": \"62ab8d6faac1b0ec5db4ab98\",\n            \"image\": \"http://placeimg.com/640/480\",\n            \"likes\": 184,\n            \"tags\": [\n                \"dog\",\n                \"cat\"\n            ],\n            \"text\": \"Sapiente dolor dolores magnam autem et consequatur...\",\n            \"publishDate\": \"2022-06-16T20:07:11.230Z\",\n            \"updatedDate\": \"2022-06-16T20:07:11.230Z\",\n            \"owner\": {\n                \"id\": \"60d0fe4f5311236168a109ed\",\n                \"title\": \"miss\",\n                \"firstName\": \"Kayla\",\n                \"lastName\": \"Bredesen\",\n                \"picture\": \"https://randomuser.me/api/portraits/med/women/13.jpg\"\n            }\n        },\n        {\n            \"id\": \"62ab8ccbaac1b03a4fb4ab36\",\n            \"image\": \"http://placeimg.com/640/480\",\n            \"likes\": 752,\n            \"tags\": [\n                \"dog\",\n                \"cat\"\n            ],\n            \"text\": \"Commodi omnis repudiandae aliquam voluptates earum...\",\n            \"publishDate\": \"2022-06-16T20:04:27.355Z\",\n            \"updatedDate\": \"2022-06-16T20:04:27.355Z\",\n            \"owner\": {\n                \"id\": \"60d0fe4f5311236168a109ed\",\n                \"title\": \"miss\",\n                \"firstName\": \"Kayla\",\n                \"lastName\": \"Bredesen\",\n                \"picture\": \"https://randomuser.me/api/portraits/med/women/13.jpg\"\n            }\n        },\n        {\n            \"id\": \"62ab8b72aac1b04832b4a96c\",\n            \"image\": \"http://placeimg.com/640/480\",\n            \"likes\": 939,\n            \"tags\": [\n                \"dog\",\n                \"cat\"\n            ],\n            \"text\": \"animi\",\n            \"publishDate\": \"2022-06-16T19:58:42.557Z\",\n            \"updatedDate\": \"2022-06-16T19:58:42.557Z\",\n            \"owner\": {\n                \"id\": \"60d0fe4f5311236168a109ed\",\n                \"title\": \"miss\",\n                \"firstName\": \"Kayla\",\n                \"lastName\": \"Bredesen\",\n                \"picture\": \"https://randomuser.me/api/portraits/med/women/13.jpg\"\n            }\n        },\n        {\n            \"id\": \"62ab8b13aac1b0a569b4a94a\",\n            \"image\": \"http://placeimg.com/640/480\",\n            \"likes\": 148,\n            \"tags\": [\n                \"dog\",\n                \"cat\"\n            ],\n            \"text\": \"Ut minus doloribus magnam consequatur ad nisi. Ips...\",\n            \"publishDate\": \"2022-06-16T19:57:07.213Z\",\n            \"updatedDate\": \"2022-06-16T19:57:07.213Z\",\n            \"owner\": {\n                \"id\": \"60d0fe4f5311236168a109ed\",\n                \"title\": \"miss\",\n                \"firstName\": \"Kayla\",\n                \"lastName\": \"Bredesen\",\n                \"picture\": \"https://randomuser.me/api/portraits/med/women/13.jpg\"\n            }\n        },\n        {\n            \"id\": \"62ab8b0eaac1b046beb4a944\",\n            \"image\": \"http://placeimg.com/640/480\",\n            \"likes\": 63,\n            \"tags\": [\n                \"dog\",\n                \"cat\"\n            ],\n            \"text\": \"Ea est blanditiis. Magnam voluptatem delectus. Quo...\",\n            \"publishDate\": \"2022-06-16T19:57:02.850Z\",\n            \"updatedDate\": \"2022-06-16T19:57:02.850Z\",\n            \"owner\": {\n                \"id\": \"60d0fe4f5311236168a109ed\",\n                \"title\": \"miss\",\n                \"firstName\": \"Kayla\",\n                \"lastName\": \"Bredesen\",\n                \"picture\": \"https://randomuser.me/api/portraits/med/women/13.jpg\"\n            }\n        },\n        {\n            \"id\": \"62ab8af6aac1b02be2b4a92e\",\n            \"image\": \"http://placeimg.com/640/480\",\n            \"likes\": 148,\n            \"tags\": [\n                \"dog\",\n                \"cat\"\n            ],\n            \"text\": \"Minus id qui eos id ut ea est possimus.\",\n            \"publishDate\": \"2022-06-16T19:56:38.710Z\",\n            \"updatedDate\": \"2022-06-16T19:56:38.710Z\",\n            \"owner\": {\n                \"id\": \"60d0fe4f5311236168a109ed\",\n                \"title\": \"miss\",\n                \"firstName\": \"Kayla\",\n                \"lastName\": \"Bredesen\",\n                \"picture\": \"https://randomuser.me/api/portraits/med/women/13.jpg\"\n            }\n        },\n        {\n            \"id\": \"62ab89e2aac1b00bb7b4a8b3\",\n            \"image\": \"http://placeimg.com/640/480\",\n            \"likes\": 111,\n            \"tags\": [\n                \"dog\",\n                \"cat\"\n            ],\n            \"text\": \"Voluptatem beatae maiores nemo accusantium minima....\",\n            \"publishDate\": \"2022-06-16T19:52:02.340Z\",\n            \"updatedDate\": \"2022-06-16T19:52:02.340Z\",\n            \"owner\": {\n                \"id\": \"60d0fe4f5311236168a109ed\",\n                \"title\": \"miss\",\n                \"firstName\": \"Kayla\",\n                \"lastName\": \"Bredesen\",\n                \"picture\": \"https://randomuser.me/api/portraits/med/women/13.jpg\"\n            }\n        },\n        {\n            \"id\": \"62ab87e7aac1b036c3b4a78e\",\n            \"image\": \"http://placeimg.com/640/480\",\n            \"likes\": 60,\n            \"tags\": [\n                \"dog\",\n                \"cat\"\n            ],\n            \"text\": \"Facere aliquam autem ad veritatis. Incidunt maiore...\",\n            \"publishDate\": \"2022-06-16T19:43:35.565Z\",\n            \"updatedDate\": \"2022-06-16T19:43:35.565Z\",\n            \"owner\": {\n                \"id\": \"60d0fe4f5311236168a109ed\",\n                \"title\": \"miss\",\n                \"firstName\": \"Kayla\",\n                \"lastName\": \"Bredesen\",\n                \"picture\": \"https://randomuser.me/api/portraits/med/women/13.jpg\"\n            }\n        }\n    ],\n    \"total\": 98,\n    \"page\": 0,\n    \"limit\": 20\n}"
+				}
+			]
+		},
+		{
+			"name": "Get Post by id",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"\r",
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"Status code name is OK\", function () {\r",
+							"    pm.response.to.have.status(\"OK\");\r",
+							"});\r",
+							"pm.test(\"Response time is less than 600ms\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(600);\r",
+							"});\r",
+							"var jsonData = pm.response.json();\r",
+							"pm.test(\"Check body.tags is array\", function () {\r",
+							"    \r",
+							"    pm.expect(jsonData.tags).to.be.an('array');\r",
+							"});\r",
+							"pm.test(\"Check body.tags[0] is dog\", function () {\r",
+							"    \r",
+							"    pm.expect(jsonData.tags[0]).to.eql(\"dog\");\r",
+							"});\r",
+							"pm.test(\"Check body.tags[1] is cat\", function () {\r",
+							"    \r",
+							"    pm.expect(jsonData.tags[1]).to.eql(\"cat\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Your test name\", function () {\r",
+							"    \r",
+							"    pm.expect(jsonData.id).to.eql(pm.collectionVariables.get(\"post ID\"));\r",
+							"});\r",
+							"pm.test(\"url image to be string\", function () {\r",
+							"   \r",
+							"    pm.expect(jsonData.image).to.be.a('string');\r",
+							"}); \r",
+							"pm.test(\"likes to be number\", function () {\r",
+							"   \r",
+							"    pm.expect(jsonData.likes).to.be.a('number');\r",
+							"});\r",
+							"pm.test(\"likes to be array\", function () {\r",
+							"   \r",
+							"    pm.expect(jsonData.tags).to.be.a('array');\r",
+							"});\r",
+							"\r",
+							"pm.test(\"text to be string\", function () {\r",
+							"   \r",
+							"    pm.expect(jsonData.text).to.be.a('string');\r",
+							"});\r",
+							"pm.test(\"publishDate post to be string\", function () {\r",
+							"   \r",
+							"    pm.expect(jsonData.publishDate).to.be.a('string');\r",
+							"});\r",
+							"pm.test(\"updatedDate post to be string\", function () {\r",
+							"   \r",
+							"    pm.expect(jsonData.updatedDate).to.be.a('string');\r",
+							"});\r",
+							"pm.test(\"User ID-60d0fe4f5311236168a109ed created post\", function () {\r",
+							"   \r",
+							"    pm.expect(jsonData.owner.id).to.eql(\"60d0fe4f5311236168a109ed\");\r",
+							"});\r",
+							"pm.test(\"User title-miss created post\", function () {\r",
+							"   \r",
+							"    pm.expect(jsonData.owner.title).to.eql(\"miss\");\r",
+							"});   \r",
+							" pm.test(\"User firstName-Kayla created post\", function () {\r",
+							"   \r",
+							"    pm.expect(jsonData.owner.firstName).to.eql(\"Kayla\");\r",
+							"});\r",
+							" pm.test(\"User lastName-Bredesen created post\", function () {\r",
+							"   \r",
+							"    pm.expect(jsonData.owner.lastName).to.eql(\"Bredesen\");\r",
+							"});  \r",
+							"pm.test(\"User picture created post\", function () {\r",
+							"   \r",
+							"    pm.expect(jsonData.owner.picture).to.eql(\"https://randomuser.me/api/portraits/med/women/13.jpg\");\r",
+							"});    "
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}post/{{post ID}}",
+					"host": [
+						"{{host}}post"
+					],
+					"path": [
+						"{{post ID}}"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get Post by id",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}post/{{post ID}}",
+							"host": [
+								"{{host}}post"
+							],
+							"path": [
+								"{{post ID}}"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Content-Length",
+							"value": "492"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "private"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Etag",
+							"value": "W/\"1ec-eFA/NSo0Wt+MNQluLCoqTHHbJBI\""
+						},
+						{
+							"key": "Function-Execution-Id",
+							"value": "1hq4p813z8c6"
+						},
+						{
+							"key": "Server",
+							"value": "Google Frontend"
+						},
+						{
+							"key": "Strict-Transport-Security",
+							"value": "max-age=31556926"
+						},
+						{
+							"key": "X-Cloud-Trace-Context",
+							"value": "bbb88086302fc3fa61ade8a794759f6e;o=1"
+						},
+						{
+							"key": "X-Country-Code",
+							"value": "US"
+						},
+						{
+							"key": "Accept-Ranges",
+							"value": "bytes"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 20 Jun 2022 09:06:05 GMT"
+						},
+						{
+							"key": "X-Served-By",
+							"value": "cache-iad-kiad7000077-IAD"
+						},
+						{
+							"key": "X-Cache",
+							"value": "MISS"
+						},
+						{
+							"key": "X-Cache-Hits",
+							"value": "0"
+						},
+						{
+							"key": "X-Timer",
+							"value": "S1655715966.815149,VS0,VE104"
+						},
+						{
+							"key": "Vary",
+							"value": "cookie,need-authorization, x-fh-requested-host, accept-encoding"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": \"62b0342ea667a46f69b3d2e0\",\n    \"image\": \"http://placeimg.com/640/480\",\n    \"likes\": 13,\n    \"link\": \"\",\n    \"tags\": [\n        \"dog\",\n        \"cat\"\n    ],\n    \"text\": \"Twas brillig, and the slithy tovesDid gyre and gimble in the wabe:All mimsy were the borogoves,And the mome raths outgrabe.\",\n    \"publishDate\": \"2022-06-20T08:47:42.079Z\",\n    \"updatedDate\": \"2022-06-20T09:02:07.056Z\",\n    \"owner\": {\n        \"id\": \"60d0fe4f5311236168a109ed\",\n        \"title\": \"miss\",\n        \"firstName\": \"Kayla\",\n        \"lastName\": \"Bredesen\",\n        \"picture\": \"https://randomuser.me/api/portraits/med/women/13.jpg\"\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Create Post",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"\r",
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"Status code name is OK\", function () {\r",
+							"    pm.response.to.have.status(\"OK\");\r",
+							"});\r",
+							"pm.test(\"Response time is less than 600ms\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(600);\r",
+							"});\r",
+							"var jsonData = pm.response.json();\r",
+							"console.log(jsonData);\r",
+							"pm.test(\"Check body id\", function () {\r",
+							"    \r",
+							"    pm.expect(jsonData.id).to.eql(pm.collectionVariables.get(\"post ID\"));\r",
+							"});\r",
+							"pm.test(\"url image to be string\", function () {\r",
+							"   \r",
+							"    pm.expect(jsonData.image).to.be.a('string');\r",
+							"}); \r",
+							"pm.test(\"likes 13\", function () {\r",
+							"   \r",
+							"    pm.expect(jsonData.likes).to.be.eql(13);\r",
+							"});\r",
+							"pm.test(\"tags to be array\", function () {\r",
+							"   \r",
+							"    pm.expect(jsonData.tags).to.be.a('array');\r",
+							"});\r",
+							"pm.test(\"Check body.tags[0] is dog\", function () {\r",
+							"    \r",
+							"    pm.expect(jsonData.tags[0]).to.eql(\"dog\");\r",
+							"});\r",
+							"pm.test(\"Check body.tags[1] is cat\", function () {\r",
+							"    \r",
+							"    pm.expect(jsonData.tags[1]).to.eql(\"cat\");\r",
+							"});\r",
+							"pm.test(\"text to be string\", function () {\r",
+							"   \r",
+							"    pm.expect(jsonData.text).to.be.eql(\"Twas brillig, and the slithy tovesDid gyre and gimble in the wabe:All mimsy were the borogoves,And the mome raths outgrabe.\");\r",
+							"});\r",
+							"pm.test(\"publishDate post to be string\", function () {\r",
+							"   \r",
+							"    pm.expect(jsonData.publishDate).to.be.a('string');\r",
+							"});\r",
+							"pm.test(\"updatedDate post to be string\", function () {\r",
+							"   \r",
+							"    pm.expect(jsonData.updatedDate).to.be.a('string');\r",
+							"});\r",
+							"pm.test(\"User ID-60d0fe4f5311236168a109ed created post\", function () {\r",
+							"   \r",
+							"    pm.expect(jsonData.owner.id).to.eql(pm.collectionVariables.get(\"user ID\"));\r",
+							"});\r",
+							"pm.test(\"User title-miss created post\", function () {\r",
+							"   \r",
+							"    pm.expect(jsonData.owner.title).to.eql(\"miss\");\r",
+							"});   \r",
+							" pm.test(\"User firstName-Kayla created post\", function () {\r",
+							"   \r",
+							"    pm.expect(jsonData.owner.firstName).to.eql(\"Kayla\");\r",
+							"});\r",
+							" pm.test(\"User lastName-Bredesen created post\", function () {\r",
+							"   \r",
+							"    pm.expect(jsonData.owner.lastName).to.eql(\"Bredesen\");\r",
+							"});  \r",
+							"pm.test(\"User picture created post\", function () {\r",
+							"   \r",
+							"    pm.expect(jsonData.owner.picture).to.eql(\"https://randomuser.me/api/portraits/med/women/13.jpg\");\r",
+							"});    "
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": \"62ae19edb3742d7909d839cc\",\r\n    \"image\": \"http://placeimg.com/640/480\",\r\n    \"likes\": 13,\r\n    \"link\": \"\",\r\n    \"tags\": [\r\n        \"dog\",\r\n        \"cat\"\r\n    ],\r\n    \"text\": \"Twas brillig, and the slithy tovesDid gyre and gimble in the wabe:All mimsy were the borogoves,And the mome raths outgrabe.\",\r\n    \"publishDate\": \"2022-06-18T18:31:09.069Z\",\r\n    \"updatedDate\": \"2022-06-18T18:31:09.069Z\",\r\n    \"owner\": {\r\n        \"id\": \"60d0fe4f5311236168a109ed\",\r\n        \"title\": \"miss\",\r\n        \"firstName\": \"Kayla\",\r\n        \"lastName\": \"Bredesen\",\r\n        \"picture\": \"https://randomuser.me/api/portraits/med/women/13.jpg\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}post/{{post ID}}",
+					"host": [
+						"{{host}}post"
+					],
+					"path": [
+						"{{post ID}}"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Create Post",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": \"62ae19edb3742d7909d839cc\",\r\n    \"image\": \"http://placeimg.com/640/480\",\r\n    \"likes\": 13,\r\n    \"link\": \"\",\r\n    \"tags\": [\r\n        \"dog\",\r\n        \"cat\"\r\n    ],\r\n    \"text\": \"Twas brillig, and the slithy tovesDid gyre and gimble in the wabe:All mimsy were the borogoves,And the mome raths outgrabe.\",\r\n    \"publishDate\": \"2022-06-18T18:31:09.069Z\",\r\n    \"updatedDate\": \"2022-06-18T18:31:09.069Z\",\r\n    \"owner\": {\r\n        \"id\": \"60d0fe4f5311236168a109ed\",\r\n        \"title\": \"miss\",\r\n        \"firstName\": \"Kayla\",\r\n        \"lastName\": \"Bredesen\",\r\n        \"picture\": \"https://randomuser.me/api/portraits/med/women/13.jpg\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}post/{{post ID}}",
+							"host": [
+								"{{host}}post"
+							],
+							"path": [
+								"{{post ID}}"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Content-Length",
+							"value": "492"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "private"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Etag",
+							"value": "W/\"1ec-AZPciqihpcdO2WcmNeaSquHHYIU\""
+						},
+						{
+							"key": "Function-Execution-Id",
+							"value": "1hq4n1b5y1fr"
+						},
+						{
+							"key": "Server",
+							"value": "Google Frontend"
+						},
+						{
+							"key": "Strict-Transport-Security",
+							"value": "max-age=31556926"
+						},
+						{
+							"key": "X-Cloud-Trace-Context",
+							"value": "e734b5807ec751ee21449c79f9b26698;o=1"
+						},
+						{
+							"key": "X-Country-Code",
+							"value": "US"
+						},
+						{
+							"key": "Accept-Ranges",
+							"value": "bytes"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 20 Jun 2022 09:10:26 GMT"
+						},
+						{
+							"key": "X-Served-By",
+							"value": "cache-iad-kcgs7200088-IAD"
+						},
+						{
+							"key": "X-Cache",
+							"value": "MISS"
+						},
+						{
+							"key": "X-Cache-Hits",
+							"value": "0"
+						},
+						{
+							"key": "X-Timer",
+							"value": "S1655716227.568782,VS0,VE115"
+						},
+						{
+							"key": "Vary",
+							"value": "cookie,need-authorization, x-fh-requested-host, accept-encoding"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": \"62b03934e4d94bc93a76a357\",\n    \"image\": \"http://placeimg.com/640/480\",\n    \"likes\": 13,\n    \"link\": \"\",\n    \"tags\": [\n        \"dog\",\n        \"cat\"\n    ],\n    \"text\": \"Twas brillig, and the slithy tovesDid gyre and gimble in the wabe:All mimsy were the borogoves,And the mome raths outgrabe.\",\n    \"publishDate\": \"2022-06-20T09:09:08.461Z\",\n    \"updatedDate\": \"2022-06-20T09:10:26.648Z\",\n    \"owner\": {\n        \"id\": \"60d0fe4f5311236168a109ed\",\n        \"title\": \"miss\",\n        \"firstName\": \"Kayla\",\n        \"lastName\": \"Bredesen\",\n        \"picture\": \"https://randomuser.me/api/portraits/med/women/13.jpg\"\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Get List By Tag",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"\r",
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"Status code name is OK\", function () {\r",
+							"    pm.response.to.have.status(\"OK\");\r",
+							"});\r",
+							"pm.test(\"Response time is less than 600ms\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(600);\r",
+							"});\r",
+							"var jsonData = pm.response.json();\r",
+							"pm.test(\"Check body data is array\", function () {\r",
+							"    \r",
+							"    pm.expect(jsonData.data).to.be.an('array');\r",
+							"});\r",
+							"pm.test(\"Check body data[0].tags[0] is dog\", function () {\r",
+							"    \r",
+							"    pm.expect(jsonData.data[0].tags[0]).to.eql(\"dog\");\r",
+							"});\r",
+							"pm.test(\"Check body data[19].tags[0] is dog\", function () {\r",
+							"    \r",
+							"    pm.expect(jsonData.data[19].tags[0]).to.eql(\"dog\");\r",
+							"});\r",
+							"pm.test(\"Check body data[0].tags[1] is cat\", function () {\r",
+							"    \r",
+							"    pm.expect(jsonData.data[0].tags[1]).to.eql(\"cat\");\r",
+							"});\r",
+							"pm.test(\"Check body data[19].tags[1] is cat\", function () {\r",
+							"    \r",
+							"    pm.expect(jsonData.data[19].tags[1]).to.eql(\"cat\");\r",
+							"});\r",
+							"pm.test(\"Check limit is 20\", function () {\r",
+							"    \r",
+							"    pm.expect(jsonData.limit).to.eql(20);\r",
+							"});\r",
+							"pm.test(\"Check page is 0\", function () {\r",
+							"    \r",
+							"    pm.expect(jsonData.page).to.eql(0);\r",
+							"});\r",
+							"pm.test(\"Check body total is number\", function () {\r",
+							"    \r",
+							"    pm.expect(jsonData.total).to.be.an('number');\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}tag/dog/post",
+					"host": [
+						"{{host}}tag"
+					],
+					"path": [
+						"dog",
+						"post"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get List By Tag",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}tag/dog/post",
+							"host": [
+								"{{host}}tag"
+							],
+							"path": [
+								"dog",
+								"post"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Content-Length",
+							"value": "8047"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "private"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Etag",
+							"value": "W/\"1f6f-proQxS5qIVaecJ3SeVxaA+meVos\""
+						},
+						{
+							"key": "Function-Execution-Id",
+							"value": "1hq4mvcumed3"
+						},
+						{
+							"key": "Server",
+							"value": "Google Frontend"
+						},
+						{
+							"key": "Strict-Transport-Security",
+							"value": "max-age=31556926"
+						},
+						{
+							"key": "X-Cloud-Trace-Context",
+							"value": "69d39624d926ba2d4bdb55950c569671"
+						},
+						{
+							"key": "X-Country-Code",
+							"value": "US"
+						},
+						{
+							"key": "Accept-Ranges",
+							"value": "bytes"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 20 Jun 2022 09:41:47 GMT"
+						},
+						{
+							"key": "X-Served-By",
+							"value": "cache-iad-kiad7000054-IAD"
+						},
+						{
+							"key": "X-Cache",
+							"value": "MISS"
+						},
+						{
+							"key": "X-Cache-Hits",
+							"value": "0"
+						},
+						{
+							"key": "X-Timer",
+							"value": "S1655718107.843861,VS0,VE254"
+						},
+						{
+							"key": "Vary",
+							"value": "cookie,need-authorization, x-fh-requested-host, accept-encoding"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": [\n        {\n            \"id\": \"62b0342ea667a46f69b3d2e0\",\n            \"image\": \"http://placeimg.com/640/480\",\n            \"likes\": 13,\n            \"tags\": [\n                \"dog\",\n                \"cat\"\n            ],\n            \"text\": \"Twas brillig, and the slithy tovesDid gyre and gim...\",\n            \"publishDate\": \"2022-06-20T08:47:42.079Z\",\n            \"updatedDate\": \"2022-06-20T09:02:07.056Z\",\n            \"owner\": {\n                \"id\": \"60d0fe4f5311236168a109ed\",\n                \"title\": \"miss\",\n                \"firstName\": \"Kayla\",\n                \"lastName\": \"Bredesen\",\n                \"picture\": \"https://randomuser.me/api/portraits/med/women/13.jpg\"\n            }\n        },\n        {\n            \"id\": \"62b02b48e4d94b901576882b\",\n            \"image\": \"http://placeimg.com/640/480\",\n            \"likes\": 13,\n            \"tags\": [\n                \"dog\",\n                \"cat\"\n            ],\n            \"text\": \"Twas brillig, and the slithy tovesDid gyre and gim...\",\n            \"publishDate\": \"2022-06-20T08:09:44.529Z\",\n            \"updatedDate\": \"2022-06-20T08:11:43.454Z\",\n            \"owner\": {\n                \"id\": \"60d0fe4f5311236168a109ed\",\n                \"title\": \"miss\",\n                \"firstName\": \"Kayla\",\n                \"lastName\": \"Bredesen\",\n                \"picture\": \"https://randomuser.me/api/portraits/med/women/13.jpg\"\n            }\n        },\n        {\n            \"id\": \"62ae19edb3742d7909d839cc\",\n            \"image\": \"http://placeimg.com/640/480\",\n            \"likes\": 13,\n            \"tags\": [\n                \"dog\",\n                \"cat\"\n            ],\n            \"text\": \"Twas brillig, and the slithy tovesDid gyre and gim...\",\n            \"publishDate\": \"2022-06-18T18:31:09.069Z\",\n            \"updatedDate\": \"2022-06-18T18:50:26.121Z\",\n            \"owner\": {\n                \"id\": \"60d0fe4f5311236168a109ed\",\n                \"title\": \"miss\",\n                \"firstName\": \"Kayla\",\n                \"lastName\": \"Bredesen\",\n                \"picture\": \"https://randomuser.me/api/portraits/med/women/13.jpg\"\n            }\n        },\n        {\n            \"id\": \"62ae10acb3742d761fd83574\",\n            \"image\": \"http://placeimg.com/640/480\",\n            \"likes\": 987,\n            \"tags\": [\n                \"dog\",\n                \"cat\"\n            ],\n            \"text\": \"Vitae ab quia recusandae ut ipsam. Beatae illum ea...\",\n            \"publishDate\": \"2022-06-18T17:51:40.022Z\",\n            \"updatedDate\": \"2022-06-18T17:51:40.022Z\",\n            \"owner\": {\n                \"id\": \"60d0fe4f5311236168a109ed\",\n                \"title\": \"miss\",\n                \"firstName\": \"Kayla\",\n                \"lastName\": \"Bredesen\",\n                \"picture\": \"https://randomuser.me/api/portraits/med/women/13.jpg\"\n            }\n        },\n        {\n            \"id\": \"62ae0fd4b3742d9cc3d83525\",\n            \"image\": \"http://placeimg.com/640/480\",\n            \"likes\": 546,\n            \"tags\": [\n                \"dog\",\n                \"cat\"\n            ],\n            \"text\": \"rem est soluta\",\n            \"publishDate\": \"2022-06-18T17:48:04.830Z\",\n            \"updatedDate\": \"2022-06-18T17:48:04.830Z\",\n            \"owner\": {\n                \"id\": \"60d0fe4f5311236168a109ed\",\n                \"title\": \"miss\",\n                \"firstName\": \"Kayla\",\n                \"lastName\": \"Bredesen\",\n                \"picture\": \"https://randomuser.me/api/portraits/med/women/13.jpg\"\n            }\n        },\n        {\n            \"id\": \"62ae0fb8b3742ddf51d83518\",\n            \"image\": \"http://placeimg.com/640/480\",\n            \"likes\": 802,\n            \"tags\": [\n                \"dog\",\n                \"cat\"\n            ],\n            \"text\": \"Eligendi delectus sed doloremque dolorem eum velit...\",\n            \"publishDate\": \"2022-06-18T17:47:36.705Z\",\n            \"updatedDate\": \"2022-06-18T17:47:36.705Z\",\n            \"owner\": {\n                \"id\": \"60d0fe4f5311236168a109ed\",\n                \"title\": \"miss\",\n                \"firstName\": \"Kayla\",\n                \"lastName\": \"Bredesen\",\n                \"picture\": \"https://randomuser.me/api/portraits/med/women/13.jpg\"\n            }\n        },\n        {\n            \"id\": \"62ab90e5aac1b019e2b4ae03\",\n            \"image\": \"http://placeimg.com/640/480\",\n            \"likes\": 571,\n            \"tags\": [\n                \"dog\",\n                \"cat\"\n            ],\n            \"text\": \"blanditiis sed libero\",\n            \"publishDate\": \"2022-06-16T20:21:57.918Z\",\n            \"updatedDate\": \"2022-06-16T20:21:57.918Z\",\n            \"owner\": {\n                \"id\": \"60d0fe4f5311236168a109ed\",\n                \"title\": \"miss\",\n                \"firstName\": \"Kayla\",\n                \"lastName\": \"Bredesen\",\n                \"picture\": \"https://randomuser.me/api/portraits/med/women/13.jpg\"\n            }\n        },\n        {\n            \"id\": \"62ab8e8daac1b0027ab4ac85\",\n            \"image\": \"http://placeimg.com/640/480\",\n            \"likes\": 918,\n            \"tags\": [\n                \"dog\",\n                \"cat\"\n            ],\n            \"text\": \"nesciunt quisquam earum\",\n            \"publishDate\": \"2022-06-16T20:11:57.504Z\",\n            \"updatedDate\": \"2022-06-16T20:11:57.504Z\",\n            \"owner\": {\n                \"id\": \"60d0fe4f5311236168a109ed\",\n                \"title\": \"miss\",\n                \"firstName\": \"Kayla\",\n                \"lastName\": \"Bredesen\",\n                \"picture\": \"https://randomuser.me/api/portraits/med/women/13.jpg\"\n            }\n        },\n        {\n            \"id\": \"62ab8df8aac1b06c07b4ac05\",\n            \"image\": \"http://placeimg.com/640/480\",\n            \"likes\": 840,\n            \"tags\": [\n                \"dog\",\n                \"cat\"\n            ],\n            \"text\": \"odit id eveniet\",\n            \"publishDate\": \"2022-06-16T20:09:28.250Z\",\n            \"updatedDate\": \"2022-06-16T20:09:28.250Z\",\n            \"owner\": {\n                \"id\": \"60d0fe4f5311236168a109ed\",\n                \"title\": \"miss\",\n                \"firstName\": \"Kayla\",\n                \"lastName\": \"Bredesen\",\n                \"picture\": \"https://randomuser.me/api/portraits/med/women/13.jpg\"\n            }\n        },\n        {\n            \"id\": \"62ab8deaaac1b0d48fb4abff\",\n            \"image\": \"http://placeimg.com/640/480\",\n            \"likes\": 192,\n            \"tags\": [\n                \"dog\",\n                \"cat\"\n            ],\n            \"text\": \"Maiores earum consectetur ut et eos eos numquam fa...\",\n            \"publishDate\": \"2022-06-16T20:09:14.649Z\",\n            \"updatedDate\": \"2022-06-16T20:09:14.649Z\",\n            \"owner\": {\n                \"id\": \"60d0fe4f5311236168a109ed\",\n                \"title\": \"miss\",\n                \"firstName\": \"Kayla\",\n                \"lastName\": \"Bredesen\",\n                \"picture\": \"https://randomuser.me/api/portraits/med/women/13.jpg\"\n            }\n        },\n        {\n            \"id\": \"62ab8da2aac1b01c15b4abad\",\n            \"image\": \"http://placeimg.com/640/480\",\n            \"likes\": 828,\n            \"tags\": [\n                \"dog\",\n                \"cat\"\n            ],\n            \"text\": \"repellat\",\n            \"publishDate\": \"2022-06-16T20:08:02.295Z\",\n            \"updatedDate\": \"2022-06-16T20:08:02.295Z\",\n            \"owner\": {\n                \"id\": \"60d0fe4f5311236168a109ed\",\n                \"title\": \"miss\",\n                \"firstName\": \"Kayla\",\n                \"lastName\": \"Bredesen\",\n                \"picture\": \"https://randomuser.me/api/portraits/med/women/13.jpg\"\n            }\n        },\n        {\n            \"id\": \"62ab8d8daac1b0c348b4ab9e\",\n            \"image\": \"http://placeimg.com/640/480\",\n            \"likes\": 743,\n            \"tags\": [\n                \"dog\",\n                \"cat\"\n            ],\n            \"text\": \"Aut exercitationem totam aut.\",\n            \"publishDate\": \"2022-06-16T20:07:41.330Z\",\n            \"updatedDate\": \"2022-06-16T20:07:41.330Z\",\n            \"owner\": {\n                \"id\": \"60d0fe4f5311236168a109ed\",\n                \"title\": \"miss\",\n                \"firstName\": \"Kayla\",\n                \"lastName\": \"Bredesen\",\n                \"picture\": \"https://randomuser.me/api/portraits/med/women/13.jpg\"\n            }\n        },\n        {\n            \"id\": \"62ab8d6faac1b0ec5db4ab98\",\n            \"image\": \"http://placeimg.com/640/480\",\n            \"likes\": 184,\n            \"tags\": [\n                \"dog\",\n                \"cat\"\n            ],\n            \"text\": \"Sapiente dolor dolores magnam autem et consequatur...\",\n            \"publishDate\": \"2022-06-16T20:07:11.230Z\",\n            \"updatedDate\": \"2022-06-16T20:07:11.230Z\",\n            \"owner\": {\n                \"id\": \"60d0fe4f5311236168a109ed\",\n                \"title\": \"miss\",\n                \"firstName\": \"Kayla\",\n                \"lastName\": \"Bredesen\",\n                \"picture\": \"https://randomuser.me/api/portraits/med/women/13.jpg\"\n            }\n        },\n        {\n            \"id\": \"62ab8ccbaac1b03a4fb4ab36\",\n            \"image\": \"http://placeimg.com/640/480\",\n            \"likes\": 752,\n            \"tags\": [\n                \"dog\",\n                \"cat\"\n            ],\n            \"text\": \"Commodi omnis repudiandae aliquam voluptates earum...\",\n            \"publishDate\": \"2022-06-16T20:04:27.355Z\",\n            \"updatedDate\": \"2022-06-16T20:04:27.355Z\",\n            \"owner\": {\n                \"id\": \"60d0fe4f5311236168a109ed\",\n                \"title\": \"miss\",\n                \"firstName\": \"Kayla\",\n                \"lastName\": \"Bredesen\",\n                \"picture\": \"https://randomuser.me/api/portraits/med/women/13.jpg\"\n            }\n        },\n        {\n            \"id\": \"62ab8b72aac1b04832b4a96c\",\n            \"image\": \"http://placeimg.com/640/480\",\n            \"likes\": 939,\n            \"tags\": [\n                \"dog\",\n                \"cat\"\n            ],\n            \"text\": \"animi\",\n            \"publishDate\": \"2022-06-16T19:58:42.557Z\",\n            \"updatedDate\": \"2022-06-16T19:58:42.557Z\",\n            \"owner\": {\n                \"id\": \"60d0fe4f5311236168a109ed\",\n                \"title\": \"miss\",\n                \"firstName\": \"Kayla\",\n                \"lastName\": \"Bredesen\",\n                \"picture\": \"https://randomuser.me/api/portraits/med/women/13.jpg\"\n            }\n        },\n        {\n            \"id\": \"62ab8b13aac1b0a569b4a94a\",\n            \"image\": \"http://placeimg.com/640/480\",\n            \"likes\": 148,\n            \"tags\": [\n                \"dog\",\n                \"cat\"\n            ],\n            \"text\": \"Ut minus doloribus magnam consequatur ad nisi. Ips...\",\n            \"publishDate\": \"2022-06-16T19:57:07.213Z\",\n            \"updatedDate\": \"2022-06-16T19:57:07.213Z\",\n            \"owner\": {\n                \"id\": \"60d0fe4f5311236168a109ed\",\n                \"title\": \"miss\",\n                \"firstName\": \"Kayla\",\n                \"lastName\": \"Bredesen\",\n                \"picture\": \"https://randomuser.me/api/portraits/med/women/13.jpg\"\n            }\n        },\n        {\n            \"id\": \"62ab8b0eaac1b046beb4a944\",\n            \"image\": \"http://placeimg.com/640/480\",\n            \"likes\": 63,\n            \"tags\": [\n                \"dog\",\n                \"cat\"\n            ],\n            \"text\": \"Ea est blanditiis. Magnam voluptatem delectus. Quo...\",\n            \"publishDate\": \"2022-06-16T19:57:02.850Z\",\n            \"updatedDate\": \"2022-06-16T19:57:02.850Z\",\n            \"owner\": {\n                \"id\": \"60d0fe4f5311236168a109ed\",\n                \"title\": \"miss\",\n                \"firstName\": \"Kayla\",\n                \"lastName\": \"Bredesen\",\n                \"picture\": \"https://randomuser.me/api/portraits/med/women/13.jpg\"\n            }\n        },\n        {\n            \"id\": \"62ab8af6aac1b02be2b4a92e\",\n            \"image\": \"http://placeimg.com/640/480\",\n            \"likes\": 148,\n            \"tags\": [\n                \"dog\",\n                \"cat\"\n            ],\n            \"text\": \"Minus id qui eos id ut ea est possimus.\",\n            \"publishDate\": \"2022-06-16T19:56:38.710Z\",\n            \"updatedDate\": \"2022-06-16T19:56:38.710Z\",\n            \"owner\": {\n                \"id\": \"60d0fe4f5311236168a109ed\",\n                \"title\": \"miss\",\n                \"firstName\": \"Kayla\",\n                \"lastName\": \"Bredesen\",\n                \"picture\": \"https://randomuser.me/api/portraits/med/women/13.jpg\"\n            }\n        },\n        {\n            \"id\": \"62ab89e2aac1b00bb7b4a8b3\",\n            \"image\": \"http://placeimg.com/640/480\",\n            \"likes\": 111,\n            \"tags\": [\n                \"dog\",\n                \"cat\"\n            ],\n            \"text\": \"Voluptatem beatae maiores nemo accusantium minima....\",\n            \"publishDate\": \"2022-06-16T19:52:02.340Z\",\n            \"updatedDate\": \"2022-06-16T19:52:02.340Z\",\n            \"owner\": {\n                \"id\": \"60d0fe4f5311236168a109ed\",\n                \"title\": \"miss\",\n                \"firstName\": \"Kayla\",\n                \"lastName\": \"Bredesen\",\n                \"picture\": \"https://randomuser.me/api/portraits/med/women/13.jpg\"\n            }\n        },\n        {\n            \"id\": \"62ab87e7aac1b036c3b4a78e\",\n            \"image\": \"http://placeimg.com/640/480\",\n            \"likes\": 60,\n            \"tags\": [\n                \"dog\",\n                \"cat\"\n            ],\n            \"text\": \"Facere aliquam autem ad veritatis. Incidunt maiore...\",\n            \"publishDate\": \"2022-06-16T19:43:35.565Z\",\n            \"updatedDate\": \"2022-06-16T19:43:35.565Z\",\n            \"owner\": {\n                \"id\": \"60d0fe4f5311236168a109ed\",\n                \"title\": \"miss\",\n                \"firstName\": \"Kayla\",\n                \"lastName\": \"Bredesen\",\n                \"picture\": \"https://randomuser.me/api/portraits/med/women/13.jpg\"\n            }\n        }\n    ],\n    \"total\": 690,\n    \"page\": 0,\n    \"limit\": 20\n}"
+				}
+			]
+		},
+		{
+			"name": "Delet post",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var jsonData = pm.response.json();\r",
+							"console.log(jsonData);\r",
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"Status code name is OK\", function () {\r",
+							"    pm.response.to.have.status(\"OK\");\r",
+							"});\r",
+							"pm.test(\"Response time is less than 600ms\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(600);\r",
+							"});\r",
+							"pm.test(\"Check body id\", function () {\r",
+							"    \r",
+							"    pm.expect(jsonData.id).to.eql(pm.collectionVariables.get(\"post ID\"));\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{host}}post/{{post ID}}",
+					"host": [
+						"{{host}}post"
+					],
+					"path": [
+						"{{post ID}}"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Delet post",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{host}}post/{{post ID}}",
+							"host": [
+								"{{host}}post"
+							],
+							"path": [
+								"{{post ID}}"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Content-Length",
+							"value": "33"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "private"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Etag",
+							"value": "W/\"21-hcgjOuc1BIMkQje3x0oKr856hlA\""
+						},
+						{
+							"key": "Function-Execution-Id",
+							"value": "xxy9ym5rg6ib"
+						},
+						{
+							"key": "Server",
+							"value": "Google Frontend"
+						},
+						{
+							"key": "Strict-Transport-Security",
+							"value": "max-age=31556926"
+						},
+						{
+							"key": "X-Cloud-Trace-Context",
+							"value": "b466a190d76b2991fd9f91d06853f0a1"
+						},
+						{
+							"key": "X-Country-Code",
+							"value": "US"
+						},
+						{
+							"key": "Accept-Ranges",
+							"value": "bytes"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 20 Jun 2022 09:12:48 GMT"
+						},
+						{
+							"key": "X-Served-By",
+							"value": "cache-iad-kcgs7200026-IAD"
+						},
+						{
+							"key": "X-Cache",
+							"value": "MISS"
+						},
+						{
+							"key": "X-Cache-Hits",
+							"value": "0"
+						},
+						{
+							"key": "X-Timer",
+							"value": "S1655716368.346782,VS0,VE96"
+						},
+						{
+							"key": "Vary",
+							"value": "cookie,need-authorization, x-fh-requested-host, accept-encoding"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": \"62b03934e4d94bc93a76a357\"\n}"
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "apikey",
+		"apikey": [
+			{
+				"key": "value",
+				"value": "6267b72c7459e2c0643a3b52",
+				"type": "string"
+			},
+			{
+				"key": "key",
+				"value": "app-id",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "post ID",
+			"value": ""
+		},
+		{
+			"key": "user ID",
+			"value": "",
+			"type": "string"
+		}
+	]
+}
