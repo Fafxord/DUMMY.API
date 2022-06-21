@@ -210,4 +210,4 @@ owner: object(User Preview)
  ### Майнд карта
 ____
 
-![Майнд карта](https://drive.google.com/file/d/1VXCo287zLdsj8baMWQlkHQdGlq9qlcms/view?usp=sharing)
+![Майнд карта](https://drive.google.com/file/d/1VXCo287zLdsj8baMWQlkHQdGlq9qlcms/view?usp=sharing))
