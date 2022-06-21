@@ -10,7 +10,8 @@
        - [Get Post by id](#Get-Post-by-id)
        - [Create Post](#Create-Post)
        - [Update Post](#Update-Post)
-       - [Delete Post](#Delete-Post)     
+       - [Delete Post](#Delete-Post)
+   - [Майнд карта](#Майнд-карта)     
 ## Описание проекта DUMMYAPI.IO
 https://dummyapi.io/ представляет собой сервис для тестирования АПИ. Для выполнения запросов необходим app-id, который генерируется автоматически при регистрации на сервисе. В качестве тестирования были взяты следующие объекты:
 ### POST 
@@ -205,3 +206,8 @@ owner: object(User Preview)
 
 **Response Body:**
  string
+ 
+ ### Майнд карта
+____
+
+![Майнд карта]([https://avatars1.githubusercontent.com/u/5384215?v=3&s=460 "Орк"](https://drive.google.com/file/d/1VXCo287zLdsj8baMWQlkHQdGlq9qlcms/view?usp=sharing))
