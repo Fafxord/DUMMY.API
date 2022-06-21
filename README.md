@@ -5,7 +5,7 @@
 
    - [POST](#POST)
        - [GET /post (Get List)](#GET-/-post-(Get-List))
-       - [GET /user/:id/post (Get List By User)](#GET-/-user-/-:id-/-post-(Get-List-By-User)     
+       - [GET /user/:id/post (Get List By User)](#GET-/-user-/-:id-/-post-(Get-List-By-User))     
 ## Описание проекта DUMMYAPI.IO
 https://dummyapi.io/ представляет собой сервис для тестирования АПИ. Для выполнения запросов необходим app-id, который генерируется автоматически при регистрации на сервисе. В качестве тестирования были взяты следующие объекты:
 ### POST 
