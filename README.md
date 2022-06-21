@@ -11,9 +11,12 @@
        - [Create Post](#Create-Post)
        - [Update Post](#Update-Post)
        - [Delete Post](#Delete-Post)
-   - [Майнд карта](#Майнд-карта)     
+   - [Майнд карта](#Майнд-карта)
+   - [Коллекции POSTMAN](#Коллекции-POSTMAN)     
 ## Описание проекта DUMMYAPI.IO
+____
 https://dummyapi.io/ представляет собой сервис для тестирования АПИ. Для выполнения запросов необходим app-id, который генерируется автоматически при регистрации на сервисе. В качестве тестирования были взяты следующие объекты:
+
 ### POST 
 ____
 #### Get List
@@ -207,6 +210,8 @@ owner: object(User Preview)
 **Response Body:**
  string
  
+ 
+ 
  ### Майнд карта
 ____
 
@@ -216,3 +221,6 @@ ____
 
 Также майнд-карту можно [скачать](https://github.com/Fafxord/DUMMY.API/blob/main/DUMMYAPI.IO.xmind)
 
+
+### Коллекции POSTMAN
+____
