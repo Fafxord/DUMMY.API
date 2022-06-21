@@ -12,7 +12,9 @@
        - [Update Post](#Update-Post)
        - [Delete Post](#Delete-Post)
    - [Майнд карта](#Майнд-карта)
-   - [Коллекции POSTMAN](#Коллекции-POSTMAN)     
+   - [Коллекции POSTMAN](#Коллекции-POSTMAN)
+       - [manual testing в Коллекции POSTMAN](#manual-testing-в-Коллекции-POSTMAN)
+       - [auto testing в Коллекции POSTMAN](#auto-testing-в-Коллекции-POSTMAN)     
 ## Описание проекта DUMMYAPI.IO
 ____
 https://dummyapi.io/ представляет собой сервис для тестирования АПИ. Для выполнения запросов необходим app-id, который генерируется автоматически при регистрации на сервисе. В качестве тестирования были взяты следующие объекты:
@@ -224,3 +226,7 @@ ____
 
 ### Коллекции POSTMAN
 ____
+
+
+#### Manual testing в Коллекции POSTMAN
+
