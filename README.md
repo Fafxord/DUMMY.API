@@ -211,3 +211,8 @@ owner: object(User Preview)
 ____
 
 ![Майнд карта](https://github.com/Fafxord/DUMMY.API/blob/main/DUMMYAPI.IO.png)
+
+Данная МК представляет собой набор тестов для тестирования объекта POST. Подробная проверка расписана для Get List, Get List By User,Get List By Tag,Get Post by id,  Create Post,Update Post и Delete Post.
+
+Также майнд-карту можно [скачать](https://github.com/Fafxord/DUMMY.API/blob/main/DUMMYAPI.IO.xmind)
+
