@@ -4,7 +4,7 @@
 [Описание проекта DUMMYAPI.IO](#Описание-проекта-DUMMYAPI.IO)   
 
    - [POST](#POST)
-       - [Get List)](#Get-List)
+       - [Get List](#Get-List)
        - [GET /user/:id/post (Get List By User)](#GET-user-id-post-Get-List-By-User)
        - [GET/tag/:id/post (Get List By Tag)](#GET-tag-id-post-Get-List-By-Tag)     
 ## Описание проекта DUMMYAPI.IO
@@ -12,7 +12,7 @@ https://dummyapi.io/ представляет собой сервис для т�
 ### POST 
 ____
 #### Get List
-#### GET /post
+    #### Запрос GET /post
 
 Возвращает список публикаций отсортировнных по дате.
  - доступен query params для вывода определенной страницы.
