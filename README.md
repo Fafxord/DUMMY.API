@@ -13,8 +13,8 @@
        - [Delete Post](#Delete-Post)
    - [Майнд карта](#Майнд-карта)
    - [Коллекции POSTMAN](#Коллекции-POSTMAN)
-       - [manual testing в Коллекции POSTMAN](#manual-testing-в-Коллекции-POSTMAN)
-       - [auto testing в Коллекции POSTMAN](#auto-testing-в-Коллекции-POSTMAN)     
+       - [Manual testing в Коллекции POSTMAN](#Manual-testing-в-Коллекции-POSTMAN)
+       - [Auto testing в Коллекции POSTMAN](#Auto-testing-в-Коллекции-POSTMAN)     
 ## Описание проекта DUMMYAPI.IO
 ____
 https://dummyapi.io/ представляет собой сервис для тестирования АПИ. Для выполнения запросов необходим app-id, который генерируется автоматически при регистрации на сервисе. В качестве тестирования были взяты следующие объекты:
@@ -230,3 +230,13 @@ ____
 
 #### Manual testing в Коллекции POSTMAN
 
+[скачать или посмотреть](https://github.com/Fafxord/DUMMY.API/blob/main/local.postman_environment.json) Environments для Postman.
+
+[скачать или посмотреть](https://github.com/Fafxord/DUMMY.API/blob/main/DUMMYAPI.Post.manual_test.postman_collection.json) ручные тесты для Postman.
+
+
+#### Auto testing в Коллекции POSTMANN
+
+[скачать или посмотреть](https://github.com/Fafxord/DUMMY.API/blob/main/local.postman_environment.json) Environments для Postman.
+
+[скачать или посмотреть](https://github.com/Fafxord/DUMMY.API/blob/main/Post.auto_test.postman_collection.json) авто тесты для Postman.
