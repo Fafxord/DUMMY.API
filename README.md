@@ -240,3 +240,9 @@ ____
 [скачать или посмотреть](https://github.com/Fafxord/DUMMY.API/blob/main/local.postman_environment.json) Environments для Postman.
 
 [скачать или посмотреть](https://github.com/Fafxord/DUMMY.API/blob/main/Post.auto_test.postman_collection.json) авто тесты для Postman.
+
+#### Auto testing в screenshots
+
+[посмотреть запрос GET](https://github.com/Fafxord/DUMMY.API/blob/main/запрос%20GET.png) 
+
+[посмотреть ответ GET](https://github.com/Fafxord/DUMMY.API/blob/main/Ответ%20GET.png)
