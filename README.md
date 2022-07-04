@@ -260,3 +260,27 @@ ____
 [посмотреть ответ get list by user тело](https://github.com/Fafxord/DUMMY.API/blob/main/ответ%20get%20list%20by%20user%20тело.png)
 
 [посмотреть ответ get list by usrer тесты](https://github.com/Fafxord/DUMMY.API/blob/main/ответ%20get%20list%20by%20usrer%20тесты.png)
+
+[посмотреть запрос get post by id](https://github.com/Fafxord/DUMMY.API/blob/main/запрос%20get%20post%20by%20id.png) 
+
+[посмотреть ответ get post by id тело](https://github.com/Fafxord/DUMMY.API/blob/main/ответ%20get%20post%20by%20id%20тело.png)
+
+[посмотреть ответ get post by id тесты](https://github.com/Fafxord/DUMMY.API/blob/main/ответ%20get%20post%20by%20id%20тесты.png)
+
+[посмотреть запрос create post тело](https://github.com/Fafxord/DUMMY.API/blob/main/запрос%20create%20post%20тело.png) 
+
+[посмотреть запрос create post тесты](https://github.com/Fafxord/DUMMY.API/blob/main/запрос%20create%20post%20тесты.png) 
+
+[посмотреть ответ create post тело2](https://github.com/Fafxord/DUMMY.API/blob/main/ответ%20create%20post%20тело2.png)
+
+[посмотреть ответ create post тесты2](https://github.com/Fafxord/DUMMY.API/blob/main/ответ%20create%20post%20тесты2.png)
+
+[посмотреть запрос get list by tag](https://github.com/Fafxord/DUMMY.API/blob/main/запрос%20get%20list%20by%20tag.png) 
+
+[посмотреть ответ get list by tag тело](https://github.com/Fafxord/DUMMY.API/blob/main/ответ%20get%20list%20by%20tag%20тело.png)
+
+[посмотреть ответ get list by tag тесты](https://github.com/Fafxord/DUMMY.API/blob/main/ответ%20get%20list%20by%20tag%20тесты.png)
+
+[посмотреть запрос delet post](https://github.com/Fafxord/DUMMY.API/blob/main/запрос%20delet%20post.png)
+
+[посмотреть ответ delet post](https://github.com/Fafxord/DUMMY.API/blob/main/ответ%20delet%20post.png)
