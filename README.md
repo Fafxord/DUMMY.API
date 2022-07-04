@@ -246,3 +246,17 @@ ____
 [посмотреть запрос GET](https://github.com/Fafxord/DUMMY.API/blob/main/запрос%20GET.png) 
 
 [посмотреть ответ GET](https://github.com/Fafxord/DUMMY.API/blob/main/Ответ%20GET.png)
+
+[посмотреть запрос create post](https://github.com/Fafxord/DUMMY.API/blob/main/запрос%20create%20post.png)
+
+[посмотреть запрос create post автотесты](https://github.com/Fafxord/DUMMY.API/blob/main/запрос%20create%20post%20%20автотесты.postman.co.png)
+
+[посмотреть ответ create post тело](https://github.com/Fafxord/DUMMY.API/blob/main/ответ%20create%20post%20тело.png)
+
+[посмотреть ответ create post тесты](https://github.com/Fafxord/DUMMY.API/blob/main/ответ%20create%20post%20тесты.png)
+
+[посмотреть запрос get list by user](https://github.com/Fafxord/DUMMY.API/blob/main/запрос%20get%20list%20by%20user.png)
+
+[посмотреть ответ get list by user тело](https://github.com/Fafxord/DUMMY.API/blob/main/ответ%20get%20list%20by%20user%20тело.png)
+
+[посмотреть ответ get list by usrer тесты](https://github.com/Fafxord/DUMMY.API/blob/main/ответ%20get%20list%20by%20usrer%20тесты.png)
