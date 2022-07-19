@@ -230,16 +230,18 @@ ____
 
 #### Manual testing в Коллекции POSTMAN
 
-[скачать или посмотреть](https://github.com/Fafxord/DUMMY.API/blob/main/local.postman_environment.json) Environments для Postman.
+[посмотреть](https://github.com/Fafxord/DUMMY.API/blob/main/local.postman_environment.json) Environments для Postman.
 
-[скачать или посмотреть](https://github.com/Fafxord/DUMMY.API/blob/main/DUMMYAPI.Post.manual_test.postman_collection.json) ручные тесты для Postman.
+[посмотреть](https://github.com/Fafxord/DUMMY.API/blob/main/DUMMYAPI.Post.manual_test.postman_collection.json) ручные тесты для Postman.
 
+
+#### А так же использовал готовые автотесты переработанные под нужды проекта
 
 #### Auto testing в Коллекции POSTMANN
 
-[скачать или посмотреть](https://github.com/Fafxord/DUMMY.API/blob/main/local.postman_environment.json) Environments для Postman.
+[посмотреть](https://github.com/Fafxord/DUMMY.API/blob/main/local.postman_environment.json) Environments для Postman.
 
-[скачать или посмотреть](https://github.com/Fafxord/DUMMY.API/blob/main/Post.auto_test.postman_collection.json) авто тесты для Postman.
+[посмотреть](https://github.com/Fafxord/DUMMY.API/blob/main/Post.auto_test.postman_collection.json) авто тесты для Postman.
 
 #### Auto testing в screenshots
 
